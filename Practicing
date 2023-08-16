@@ -1,0 +1,20 @@
+<?php
+
+fuction generateRandomPassword($length = 12){
+$chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()';
+$password = '';
+
+for ($i = 0; $i < $length; $i++)
+    {
+    $randomIndex = mt_rand(0, strlen($chars) - 1);
+    $password .= $chars[$randomIndex];
+
+     }
+   return $password;
+}
+
+$length = intval(readline("Enter the desired password length: "));
+$password = generateRandomPassword($length);
+
+echo "Generated Password: $password\n";
+?>
